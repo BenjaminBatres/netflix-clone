@@ -3,7 +3,7 @@ import { BellIcon, SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
 function Header() {
-    const [isScrolled, setIsScrolled] = useState(true)
+    const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
         const handelScroll = () => {

@@ -1,7 +1,7 @@
 import { baseUrl } from "@/constants/movie";
 import { Movie } from "@/typings";
 import { InformationCircleIcon } from "@heroicons/react/solid";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 
@@ -17,11 +17,11 @@ function Banner({ netflixOriginals }: Props) {
     );
   }, [netflixOriginals]);
 
-  console.log(movie);
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
       <div className="absolute top-0 left-0 -z-10 h-[95vh] w-[100%]">
         <Image
+          priority
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
           alt="banner-img"
           layout="fill"
